@@ -14,7 +14,10 @@ and open the template in the editor.
         
     </head>
     <body>
-        <button onclick="imagem()">imagem</button>
+        
+        <form action="imagem.php">
+        <input type="submit" value="imagem">
+        </form>    
         <script>
             function imagem(){                
               var upload = [function upload() {

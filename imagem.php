@@ -11,15 +11,11 @@ return false
 }
 //-->
 </script>
-<title>Upload simples (copy e move_uploaded_file)</title>
+<title>Imagem de Fundo (copy e move_uploaded_file)</title>
 </head>
 <body>
+    
 <?php
-/*
-INICIO DO CODIGO PHP
-NA METADE DE BAIXO (SEGUNDA METADE) HA SOMENTE HTML (FORMULARIO DE UPLOAD)
-*/
-
 if (isset($_FILES[arquivo])) {
 	if ($_FILES[arquivo][size] > 1024 * 1024) {
 		$tamanho = round(($_FILES[arquivo][size] / 1024 / 1024), 2);
@@ -32,15 +28,6 @@ if (isset($_FILES[arquivo])) {
 		$med = "Bytes";
 	}
 
-	/* Defina aqui o tamanho máximo do arquivo em bytes: */
-	
-	#if($_FILES[arquivo][size] > 5242880) { //Limite: 5MB
-	#	print "<script> alert('Tamanho: $tamanho $med! Seu arquivo não poderá ser maior que 5MB!'); window.history.go(-1); </script>\n";
-	#	exit;
-#	}
-	
-	/* Defina aqui o diretório destino do upload */
-	
 	if (is_file($_FILES[arquivo][tmp_name])) {
 		$arquivo = $_FILES[arquivo][tmp_name];
 		$caminho="./upload/";
@@ -64,6 +51,7 @@ if (isset($_FILES[arquivo])) {
 	echo("De: $arquivo<br>\nPara: $caminho [<a href='$caminho'>download</a>]");
 }
 ?>
+    
 <h2>Upload Simples</h2><br>
 
 <p>
